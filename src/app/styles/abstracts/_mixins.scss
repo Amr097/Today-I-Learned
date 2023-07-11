@@ -1,0 +1,26 @@
+@mixin respronse($sreen-size) {
+  @if ($sreen-size == phone) {
+    @media only screen and (width <= 41.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if ($sreen-size == tab-port) {
+    @media only screen and (41.5em < width <= 61em) {
+      //900px
+      @content;
+    }
+  }
+  @if ($sreen-size == tab-land) {
+    @media only screen and (61em < width <= 75em) {
+      //1200px
+      @content;
+    }
+  }
+  @if ($sreen-size == big-desktop) {
+    @media only screen and (width > 121em) {
+      //2000px
+      @content;
+    }
+  }
+}

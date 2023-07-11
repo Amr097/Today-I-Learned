@@ -1,0 +1,123 @@
+.form {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(64, 59, 59);
+  margin: 0 3rem;
+  padding: 2rem 1rem;
+  border-radius: 15px;
+  gap: 1rem;
+
+  @media only screen and (width <= 78.125em) {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+    padding: 2rem 2rem;
+  }
+
+  input {
+    &:first-child {
+      flex-basis: 60%;
+
+      &:focus {
+        border-image: linear-gradient(
+            135deg,
+            transparent 10%,
+            #3b82f6,
+            #ef4444,
+            #16a34a,
+            #eab308,
+            rgba(255, 255, 255, 0) 90%
+          )
+          1;
+      }
+    }
+    flex-basis: 20%;
+    border: none;
+    outline: none;
+    border-radius: 5000px;
+    padding: 2rem 2.8rem;
+    text-align: left;
+    background-color: rgb(159, 150, 150);
+    color: rgb(255, 255, 255);
+    font-size: 1.7rem;
+    border-bottom: 2px solid transparent;
+
+    @media only screen and (width <= 78.125em) {
+      flex-basis: 1;
+      width: 100%;
+    }
+
+    &::placeholder {
+      color: rgb(223, 210, 210);
+      font-weight: 500;
+      font-size: 1.7rem;
+    }
+
+    &:focus {
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(
+          135deg,
+          transparent 20%,
+          #3b82f6,
+          #ef4444,
+          #16a34a,
+          #eab308,
+          rgba(255, 255, 255, 0) 90%
+        )
+        1;
+    }
+  }
+
+  span {
+    font-size: 2rem;
+    color: white;
+    margin: 0 1rem;
+  }
+  select {
+    border: none;
+    outline: none;
+    border-radius: 5000px;
+    padding: 1.5rem 0.4em;
+    text-align: left;
+    background-color: rgb(159, 150, 150);
+    color: rgb(223, 210, 210);
+    font-size: 1.7rem;
+
+    @media only screen and (width <= 78.125em) {
+      flex-basis: 1;
+      width: 100%;
+    }
+
+    option {
+      color: white;
+    }
+  }
+
+  &__btn {
+    padding: 1.4rem 2.8rem;
+    border-radius: 5000px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-family: "Coiny", cursive;
+    background-color: rgb(159, 150, 150);
+    color: white;
+
+    background-image: linear-gradient(
+      135deg,
+      #3b82f6,
+      #ef4444,
+      #16a34a,
+      #eab308
+    );
+
+    transition: all 0.2s;
+
+    &:hover {
+      transform: rotate(-2deg) scale(1.1);
+    }
+  }
+}

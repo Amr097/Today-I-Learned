@@ -1,0 +1,51 @@
+.header {
+  grid-column: 1/-1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: max-content minmax(min-content, max-content) 1fr;
+  color: white;
+  grid-gap: 2rem;
+  align-items: center;
+  padding: 5rem;
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bolder;
+    font-family: "Coiny", cursive;
+    line-height: 1;
+    margin-top: 1rem;
+  }
+
+  .logo {
+    width: 7.5rem;
+    height: 7.5rem;
+    display: block;
+  }
+
+  &__btn {
+    justify-self: flex-end;
+    padding: 2rem 2.8rem 1.8rem;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5000px;
+    border: none;
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+    font-family: "Coiny", cursive;
+    background-image: linear-gradient(
+      135deg,
+      #3b82f6,
+      #ef4444,
+      #16a34a,
+      #eab308
+    );
+
+    transition: all 0.2s;
+
+    &:hover {
+      transform: rotate(-2deg) scale(1.1);
+    }
+  }
+}

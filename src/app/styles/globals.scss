@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Coiny&family=Josefin+Sans:wght@300;400;500;600&family=Sono:wght@400;500;600;700;800&display=swap");
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/utils";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/queries";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Sono", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (width <= 75em) {
+    font-size: 57%;
+  }
+
+  @media only screen and (width <= 53.125em) {
+    font-size: 40%;
+  }
+}
+
+body {
+  background-color: rgb(23, 22, 22);
+}
+
+main {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+
+.root {
+  margin: 0 auto;
+  max-width: 90%;
+}

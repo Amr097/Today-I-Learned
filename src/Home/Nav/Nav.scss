@@ -9,6 +9,7 @@
     grid-column: 1/-1;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
   }
 
   &__btn {
@@ -23,6 +24,7 @@
     font-size: 1.8rem;
     color: white;
     background-color: rgb(137, 97, 47);
+    cursor: pointer;
 
     &:first-child {
       margin-bottom: 1rem;
@@ -40,7 +42,7 @@
     }
 
     @media only screen and (width <= 53.125em) {
-      width: max-content;
+      width: 20rem;
     }
   }
 }

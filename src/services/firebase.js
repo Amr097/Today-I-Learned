@@ -1,14 +1,13 @@
-//import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
 import { collection, getFirestore, getDocs } from "firebase/firestore";
 
 const config = {
-  apiKey: "AIzaSyCF7P83GWJ6IERzelbrOCGtF04EimbiASY",
-  authDomain: "share-a-fact.firebaseapp.com",
-  projectId: "share-a-fact",
-  storageBucket: "share-a-fact.appspot.com",
-  messagingSenderId: "495291581425",
-  appId: "1:495291581425:web:9dd3dab3d4c47712e53a50",
+  apiKey: process.env.NEXT_PUBLIC_FIRE_BASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIRE_BASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIRE_BASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIRE_BASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIRE_BASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIRE_BASE_APP_ID,
 };
 
 initializeApp(config);
@@ -17,7 +16,7 @@ const db = getFirestore();
 
 const colRef = collection(db, "facts");
 
-const docs = getDocs(colRef)
+const docsFacts = getDocs(colRef)
   .then((snapshot) => {
     let facts = [];
     snapshot.docs.forEach((doc) => {
@@ -29,8 +28,4 @@ const docs = getDocs(colRef)
     return err.message;
   });
 
-let result = docs.then((result) => {
-  console.log(result);
-});
-
-export { result };
+export { docsFacts };

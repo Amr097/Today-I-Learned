@@ -28,4 +28,4 @@ const docsFacts = getDocs(colRef)
     return err.message;
   });
 
-export { docsFacts };
+export { docsFacts, colRef, db };

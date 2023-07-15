@@ -27,7 +27,7 @@
       &:focus {
         border-image: linear-gradient(
             135deg,
-            transparent 10%,
+            transparent 15%,
             #3b82f6,
             #ef4444,
             #16a34a,
@@ -35,6 +35,21 @@
             rgba(255, 255, 255, 0) 90%
           )
           1;
+      }
+
+      @media only screen and (width <= 53.125em) {
+        &:focus {
+          border-image: linear-gradient(
+              135deg,
+              transparent 25%,
+              #3b82f6,
+              #ef4444,
+              #16a34a,
+              #eab308,
+              rgba(255, 255, 255, 0) 90%
+            )
+            1;
+        }
       }
     }
     flex-basis: 20%;

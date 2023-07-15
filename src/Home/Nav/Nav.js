@@ -13,7 +13,7 @@ const Nav = () => {
       <button
         className="navegory__btn"
         onClick={() => {
-          factsCtx.filterFacts(null);
+          factsCtx.filterFacts("", factsCtx.userFacts);
         }}
       >
         All

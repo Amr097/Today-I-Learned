@@ -2,23 +2,13 @@
 import React from "react";
 import Item from "./Components/item";
 import { v4 as uuidv4 } from "uuid";
-import { docsFacts } from "@/services/firebase";
-import { useState, useEffect } from "react";
 import "./Facts.scss";
 import { useContext } from "react";
 import FactsContext from "@/store/factsContext";
 
 const Facts = () => {
   const factsCtx = useContext(FactsContext);
-
-  const [totalFeedback, setTotalFeedback] = useState([]);
-
-  useEffect(() => {
-    docsFacts.then((result) => {
-      factsCtx.setFacts(result);
-      factsCtx.filterFacts(null);
-    });
-  }, []);
+  //const [totalFeedback, setTotalFeedback] = useState([]);
 
   const calcVotes = () => {
     // let factsRev = [];
@@ -45,22 +35,24 @@ const Facts = () => {
     // setTotalFeedback(factsRev);
     // console.log(totalFeedback);
   };
-
+  //factsCtx.userFilteredFacts
   return (
     <ul className="facts__container" onClick={calcVotes}>
-      {factsCtx.userFilteredFacts.map((facts) => (
-        <Item
-          id={facts.id}
-          text={facts.text}
-          source={facts.source}
-          category={facts.category}
-          votesInteresting={facts.votesInteresting}
-          votesMindblowing={facts.votesMindblowing}
-          votesFalse={facts.votesFalse}
-          createdIn={facts.createdIn}
-          key={uuidv4()}
-        />
+      {factsCtx.userFilteredFacts.map((fact) => (
+        <Item fact={fact} key={uuidv4()} />
       ))}
+      {factsCtx.userFilteredFacts.length > 0 && (
+        <p
+          style={{
+            color: "grey",
+            fontSize: "1.6rem",
+            backgroundColor: "transperant",
+          }}
+        >
+          There are {factsCtx.userFilteredFacts.length} facts in the database,
+          add your own NOW!
+        </p>
+      )}
     </ul>
   );
 };

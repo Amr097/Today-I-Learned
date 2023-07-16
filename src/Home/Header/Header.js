@@ -2,7 +2,6 @@
 import React from "react";
 import "./Header.scss";
 import Form from "@/Home/Form/Form";
-import { useRef } from "react";
 
 const Header = () => {
   return (

@@ -78,7 +78,7 @@
       border-bottom: 2px solid transparent;
       border-image: linear-gradient(
           135deg,
-          transparent 20%,
+          transparent 28%,
           #3b82f6,
           #ef4444,
           #16a34a,
@@ -137,6 +137,10 @@
 
     &:hover {
       transform: rotate(-2deg) scale(1.1);
+    }
+
+    &:focus {
+      transform: rotate(-2deg) scale(1);
     }
   }
 }

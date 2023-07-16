@@ -13,11 +13,14 @@ export default function Home() {
   useEffect(() => {
     factsCtx.setLoading(true);
 
-    docsFacts.then((result) => {
-      factsCtx.setFacts(result);
-      factsCtx.filterFacts(null, result);
-    });
-    factsCtx.setLoading(false);
+    docsFacts
+      .then((result) => {
+        factsCtx.filterFacts(null, [...result]);
+        factsCtx.setFacts([...result]);
+      })
+      .then(() => {
+        factsCtx.setLoading(false);
+      });
   }, []);
 
   return (

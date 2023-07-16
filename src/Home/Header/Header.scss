@@ -16,6 +16,10 @@
     font-family: "Coiny", cursive;
     line-height: 1;
     margin-top: 1rem;
+
+    @media only screen and (width <= 53.125em) {
+      font-size: 3.5rem;
+    }
   }
 
   .logo {
@@ -44,14 +48,27 @@
 
     transition: all 0.2s;
 
+    @media only screen and (width <= 53.125em) {
+      max-width: 21rem;
+      text-align: center;
+    }
+
     p {
       font-family: "Coiny", cursive;
       font-size: 2.2rem;
       text-transform: uppercase;
+
+      @media only screen and (width <= 53.125em) {
+        font-size: 1.9rem;
+      }
     }
 
     &:hover {
       transform: rotate(-2deg) scale(1.1);
+    }
+
+    &:active {
+      transform: rotate(0) scale(1);
     }
 
     &::before {

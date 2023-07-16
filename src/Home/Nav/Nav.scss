@@ -41,6 +41,10 @@
       transform: SkewY(-2deg) scale(1.08);
     }
 
+    &:active {
+      transform: SkewY(0) scale(0.9);
+    }
+
     @media only screen and (width <= 53.125em) {
       width: 20rem;
     }

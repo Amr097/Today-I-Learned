@@ -5,6 +5,7 @@ import { CATEGORIES } from "../../../data";
 import { v4 as uuidv4 } from "uuid";
 import { useContext } from "react";
 import FactsContext from "@/store/factsContext";
+import { filterFacts } from "./Functions/FilterFacts";
 
 const Nav = () => {
   const factsCtx = useContext(FactsContext);
@@ -13,7 +14,11 @@ const Nav = () => {
       <button
         className="navegory__btn"
         onClick={() => {
+          factsCtx.setLoading(true);
           factsCtx.filterFacts("", factsCtx.userFacts);
+          setTimeout(() => {
+            factsCtx.setLoading(false);
+          }, 400);
         }}
       >
         All
@@ -24,7 +29,7 @@ const Nav = () => {
           className="navegory__btn"
           style={{ backgroundColor: item.color }}
           onClick={() => {
-            factsCtx.filterFacts(item.name);
+            filterFacts(factsCtx, item);
           }}
         >
           {item.name}

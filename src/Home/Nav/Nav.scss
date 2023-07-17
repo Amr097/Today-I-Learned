@@ -1,8 +1,8 @@
 .navegory {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 3rem;
+  padding: 5rem 3rem;
+  grid-gap: 1.5rem;
 
   @media only screen and (width <= 53.125em) {
     flex-direction: row;
@@ -10,6 +10,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+
+  @media only screen and (width > 75em) {
+    padding: 0 3rem;
   }
 
   &__btn {

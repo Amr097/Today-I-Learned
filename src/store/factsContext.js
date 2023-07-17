@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useState } from "react";
+import { sortFacts } from "./functions/sortFacts";
 
 const FactsContext = createContext({
   facts: [],
@@ -10,6 +11,8 @@ const FactsContext = createContext({
   setLoading: () => {},
   loadingSmall: Boolean,
   setLoadingSmall: () => {},
+  updating: Boolean,
+  isUpdating: () => {},
 });
 
 export function FactsContextProvider(props) {
@@ -18,19 +21,23 @@ export function FactsContextProvider(props) {
   const [loading, setLoading] = useState(true);
   const [loadingSmall, setLoadingSmall] = useState(false);
 
-  function filterByCategory(category, factss) {
-    if (!category) {
-      setFilteredFacts([...factss]);
+  function filterByCategory(category, factss, sortMethod) {
+    if (!category && !sortMethod) {
+      setFilteredFacts(sortFacts(factss));
       return filteredFacts;
+    } else if (sortMethod) {
+      setFilteredFacts(factss);
     } else {
       const filteredFacts = facts.filter((fact) => fact.category === category);
-      setFilteredFacts(filteredFacts);
+
+      setFilteredFacts(sortFacts(filteredFacts));
+
       return filteredFacts;
     }
   }
 
   function setUserFacts(factss) {
-    setFacts(factss);
+    setFacts(sortFacts(factss));
   }
 
   const context = {

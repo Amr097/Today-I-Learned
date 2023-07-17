@@ -1,18 +1,25 @@
+"use client";
 import React from "react";
 import { CATEGORIES } from "../../../../data";
 import { updateDoc, doc } from "firebase/firestore";
 import { db } from "@/services/firebase";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import FactsContext from "@/store/factsContext";
 import { getColor } from "./Functions/getColor";
 import { updateinteracts } from "./Functions/updateInteracts";
 
 const Item = ({ fact }) => {
   const factsCtx = useContext(FactsContext);
+  const [updating, setIsUpdating] = useState(false);
+  const isDisputed =
+    fact.votesInteresting + fact.votesMindblowing < fact.votesFalse;
 
   return (
     <li className="item">
       <p className="item__text">
+        {isDisputed ? (
+          <span style={{ color: "red" }}> [⛔️DISPUTED!] </span>
+        ) : null}
         {fact.text}
         <a href={fact.source} target="_blank" className="item__source">
           (Source)
@@ -27,14 +34,18 @@ const Item = ({ fact }) => {
         </span>
         <button
           className="item__interact"
-          onClick={() => {
+          disabled={updating}
+          onClick={(e) => {
             updateinteracts(
               "votesInteresting",
               updateDoc,
               doc,
               db,
               fact,
-              factsCtx
+              factsCtx,
+              setIsUpdating,
+              e,
+              updating
             );
           }}
         >
@@ -42,14 +53,18 @@ const Item = ({ fact }) => {
         </button>
         <button
           className="item__interact"
-          onClick={() => {
+          disabled={updating}
+          onClick={(e) => {
             updateinteracts(
               "votesMindblowing",
               updateDoc,
               doc,
               db,
               fact,
-              factsCtx
+              factsCtx,
+              setIsUpdating,
+              e,
+              updating
             );
           }}
         >
@@ -57,8 +72,19 @@ const Item = ({ fact }) => {
         </button>
         <button
           className="item__interact"
-          onClick={() => {
-            updateinteracts("votesFalse", updateDoc, doc, db, fact, factsCtx);
+          disabled={updating}
+          onClick={(e) => {
+            updateinteracts(
+              "votesFalse",
+              updateDoc,
+              doc,
+              db,
+              fact,
+              factsCtx,
+              setIsUpdating,
+              e,
+              updating
+            );
           }}
         >
           ⛔️ <strong>{fact.votesFalse} </strong>

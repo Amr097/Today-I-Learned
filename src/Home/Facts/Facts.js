@@ -9,34 +9,7 @@ import SpinnerSmall from "../Partials/SpinnerSmall";
 
 const Facts = () => {
   const factsCtx = useContext(FactsContext);
-  //const [totalFeedback, setTotalFeedback] = useState([]);
 
-  const calcVotes = () => {
-    // let factsRev = [];
-    // let isCorrect = true;
-    // facts.forEach((fact) => {
-    //   const positiveFeedback = fact.votesInteresting + fact.votesMindblowing;
-    //   const total = positiveFeedback - fact.votesFalse;
-    //   ////////////////////////////
-    //   const id = fact.id;
-    //   ///////////////////////////
-    //   const dateCreated = fact.createdIn.toDate();
-    //   const currentDate = Date.now();
-    //   const ageInSeconds = currentDate - dateCreated;
-    //   const ageInDays = Math.floor(ageInSeconds / (1000 * 3600 * 24));
-    //   /////////////////////////////
-    //   if (positiveFeedback < fact.votesFalse) isCorrect = false;
-    //   factsRev.push({
-    //     upVotes: total,
-    //     id: id,
-    //     isCorrect: isCorrect,
-    //     age: ageInDays,
-    //   });
-    // });
-    // setTotalFeedback(factsRev);
-    // console.log(totalFeedback);
-  };
-  //factsCtx.userFilteredFacts
   return (
     <ul className="facts__container">
       {factsCtx.loadingSmall && <SpinnerSmall />}

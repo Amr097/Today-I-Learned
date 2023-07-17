@@ -1,4 +1,15 @@
-export function updateinteracts(type, updateDoc, doc, db, fact, factsCtx) {
+export function updateinteracts(
+  type,
+  updateDoc,
+  doc,
+  db,
+  fact,
+  factsCtx,
+  isUpdating,
+  e,
+  updating
+) {
+  isUpdating(true);
   const docRef = doc(db, "facts", fact.id);
 
   updateDoc(docRef, {
@@ -11,5 +22,9 @@ export function updateinteracts(type, updateDoc, doc, db, fact, factsCtx) {
     );
     return factsCtx.userFilteredFacts;
   };
-  factsCtx.filterFacts("", [...updatedFacts()]);
+
+  setTimeout(() => {
+    isUpdating(false);
+    factsCtx.filterFacts("", [...updatedFacts()]);
+  }, 200);
 }

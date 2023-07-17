@@ -4,10 +4,14 @@
   display: grid;
   grid-template-columns: max-content minmax(min-content, max-content) 1fr;
   color: white;
-  grid-gap: 2rem;
   align-items: center;
-  padding: 5rem;
-  padding-bottom: 3rem;
+  padding: 3rem 3rem 0;
+  grid-column-gap: 2rem;
+
+  @media only screen and (width > 75em) {
+    padding: 3rem 5rem;
+    grid-gap: 2rem;
+  }
 
   &__title {
     text-transform: uppercase;

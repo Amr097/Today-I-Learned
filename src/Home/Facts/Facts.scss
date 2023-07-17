@@ -5,7 +5,12 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 3rem;
+  padding: 4rem;
+
+  @media only screen and (width > 75em) {
+    padding: 0 3rem 1.5rem;
+    overflow-y: scroll;
+  }
 }
 
 .item {
@@ -80,6 +85,9 @@
 
     &:hover {
       background-color: #292524;
+    }
+    &:disabled {
+      background-color: #e5d6d2;
     }
   }
 

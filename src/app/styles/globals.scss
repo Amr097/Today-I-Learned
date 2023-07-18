@@ -38,6 +38,7 @@ body {
 main {
   display: grid;
   grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content 1fr;
   height: 80vh;
 
   ::-webkit-scrollbar {
@@ -65,18 +66,4 @@ main {
     margin: 0 auto;
     max-width: 90%;
   }
-}
-
-.filter-category {
-  grid-column: 2/-1;
-  margin: 3rem 0;
-  margin-left: 3rem;
-  padding: 0.3rem;
-  border-radius: 5px;
-  width: fit-content;
-  border: none;
-  outline: none;
-  background-color: rgb(159, 150, 150);
-  color: rgb(223, 210, 210);
-  font-size: 1.7rem;
 }

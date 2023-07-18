@@ -1,0 +1,56 @@
+@import "../../../app/styles/globals";
+
+.search {
+  flex: 1;
+  background-color: rgb(159, 150, 150);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 1.7rem;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+
+  &__input {
+    width: 90%;
+    background-color: rgb(159, 150, 150);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.4rem;
+    padding-left: 0;
+    transition: all 0.25s ease-in-out;
+    font-size: inherit;
+    caret-color: white;
+    color: rgb(223, 210, 210);
+
+    &:focus {
+      width: 95%;
+      outline: none;
+      background-color: rgb(159, 150, 150);
+    }
+
+    &::placeholder {
+      font-size: inherit;
+      color: rgb(223, 210, 210);
+    }
+  }
+  &__button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+      transform: translateY(1px) scale(0.98);
+    }
+  }
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: rgb(223, 210, 210);
+
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+  }
+}

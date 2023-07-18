@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { collection, getFirestore, getDocs } from "firebase/firestore";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+} from "firebase/auth";
 
 const config = {
   apiKey: process.env.NEXT_PUBLIC_FIRE_BASE_API_KEY,
@@ -10,7 +15,7 @@ const config = {
   appId: process.env.NEXT_PUBLIC_FIRE_BASE_APP_ID,
 };
 
-initializeApp(config);
+const app = initializeApp(config);
 
 const db = getFirestore();
 
@@ -28,4 +33,9 @@ const docsFacts = getDocs(colRef)
     return err.message;
   });
 
-export { docsFacts, colRef, db };
+const auth = getAuth(app);
+
+const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+
+export { docsFacts, colRef, db, auth, googleProvider, facebookProvider };

@@ -8,6 +8,7 @@
   @media only screen and (width <= 53.125em) {
     flex-direction: row;
     grid-column: 1/-1;
+    grid-row: 1 / span 1;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;

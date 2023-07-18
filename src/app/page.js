@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <div className="root">
-      <Header />
+      <Header factsCtx={factsCtx} />
       <main>
         <SortMenu factsCtx={factsCtx} />
         <Nav />

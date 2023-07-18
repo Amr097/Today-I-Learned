@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "encoding": "^0.1.13",
     "firebase": "^10.0.0",
     "next": "13.4.6",
     "postcss": "^8.4.24",

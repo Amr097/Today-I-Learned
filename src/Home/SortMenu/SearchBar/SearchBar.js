@@ -28,17 +28,16 @@ const SearchBar = ({ factsCtx }) => {
         }}
       >
         <svg
-          className="search__icon"
           xmlns="http://www.w3.org/2000/svg"
           fill="grey"
           viewBox="0 0 24 24"
-          stroke-width="2.5"
+          strokeWidth="2.5"
           stroke="rgb(223, 210, 210)"
-          class="w-6 h-6"
+          className="w-6 h-6 search__icon"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>

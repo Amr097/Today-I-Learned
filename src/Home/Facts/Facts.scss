@@ -12,6 +12,10 @@
     padding: 0 3rem 1.5rem;
     overflow-y: scroll;
   }
+
+  @media only screen and (width <= 53.125em) {
+    grid-row: 3 / span 1;
+  }
 }
 
 .item {

@@ -2,7 +2,7 @@
   grid-column: 1/-1;
   width: 100%;
   display: grid;
-  grid-template-columns: max-content minmax(min-content, max-content) 1fr;
+  grid-template-columns: max-content minmax(min-content, max-content) 1fr max-content max-content;
   color: white;
   align-items: center;
   padding: 3rem 3rem 0;

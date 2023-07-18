@@ -11,6 +11,10 @@
   margin-bottom: 3rem;
   padding: 0 1rem;
 
+  @media only screen and (width <= 53.125em) {
+    margin: 0;
+  }
+
   &__input {
     width: 90%;
     background-color: rgb(159, 150, 150);
@@ -22,6 +26,11 @@
     font-size: inherit;
     caret-color: white;
     color: rgb(223, 210, 210);
+    font-weight: bold;
+
+    @media only screen and (width <= 53.125em) {
+      padding: 1rem;
+    }
 
     &:focus {
       width: 95%;

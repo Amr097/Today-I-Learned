@@ -5,6 +5,11 @@
   align-items: center;
   gap: 2rem;
   padding: 0 5rem 0 3rem;
+
+  @media only screen and (width <= 53.125em) {
+    grid-row: 2 / span 1;
+    padding: 0 5rem 0 5rem;
+  }
 }
 
 .filter-category {
@@ -18,4 +23,14 @@
   background-color: rgb(159, 150, 150);
   color: rgb(223, 210, 210);
   font-size: 1.7rem;
+  font-weight: bold;
+
+  option {
+    font-weight: bold;
+  }
+
+  @media only screen and (width <= 53.125em) {
+    margin: 0;
+    padding: 1rem;
+  }
 }

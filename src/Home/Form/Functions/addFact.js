@@ -18,6 +18,7 @@ export function addFact(
     votesMindblowing: 0,
     votesFalse: 0,
     createdIn: Date.now(),
+    authorId: factsCtx.user.uid,
   };
 
   factsCtx.setLoadingSmall(true);

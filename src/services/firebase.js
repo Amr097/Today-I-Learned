@@ -20,6 +20,7 @@ const app = initializeApp(config);
 const db = getFirestore();
 
 const colRef = collection(db, "facts");
+//const interactsRef = collection(db, "interactions");
 
 const docsFacts = getDocs(colRef)
   .then((snapshot) => {
@@ -33,9 +34,21 @@ const docsFacts = getDocs(colRef)
     return err.message;
   });
 
+// const docsInteracts = getDocs(interactsRef)
+//   .then((snapshot) => {
+//     let interactions = [];
+//     console.log(snapshot);
+//     snapshot.docs.forEach((doc) => {
+//       interactions.push({ ...doc.data(), id: doc.id });
+//     });
+//     return interactions;
+//   })
+//   .catch((err) => {
+//     return err.message;
+//   });
+
 const auth = getAuth(app);
 
 const googleProvider = new GoogleAuthProvider();
-const facebookProvider = new FacebookAuthProvider();
 
-export { docsFacts, colRef, db, auth, googleProvider, facebookProvider };
+export { docsFacts, colRef, db, auth, googleProvider };

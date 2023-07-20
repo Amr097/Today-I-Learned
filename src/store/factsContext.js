@@ -23,6 +23,8 @@ export function FactsContextProvider(props) {
   const [loading, setLoading] = useState(true);
   const [loadingSmall, setLoadingSmall] = useState(false);
   const [user, setUser] = useState(null);
+  const [interactions, setInteractions] = useState(null);
+  const [userPosts, setUserPosts] = useState([]);
 
   function filterByCategory(category, factss, sortMethod) {
     if (!category && !sortMethod) {
@@ -54,6 +56,10 @@ export function FactsContextProvider(props) {
     setLoadingSmall: setLoadingSmall,
     user: user,
     setUser: setUser,
+    interactions: interactions,
+    setInteractions: setInteractions,
+    userPosts: userPosts,
+    setUserPosts: setUserPosts,
   };
   return (
     <FactsContext.Provider value={context}>

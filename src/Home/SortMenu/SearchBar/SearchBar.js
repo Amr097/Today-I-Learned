@@ -25,6 +25,13 @@ const SearchBar = ({ factsCtx }) => {
         className="search__button"
         onClick={() => {
           setSearchText("");
+          if (factsCtx.userFilteredFacts.length < factsCtx.userFacts.length) {
+            factsCtx.setLoading(true);
+            factsCtx.filterFacts("", [...factsCtx.userFacts]);
+            setTimeout(() => {
+              factsCtx.setLoading(false);
+            }, 100);
+          }
         }}
       >
         <svg

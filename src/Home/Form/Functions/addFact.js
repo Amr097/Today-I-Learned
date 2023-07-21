@@ -25,8 +25,8 @@ export function addFact(
 
   addDoc(colRef, newFact).then((f) => {
     newFact.id = f.id;
-    factsCtx.setFacts([newFact, ...factsCtx.userFilteredFacts]);
-    factsCtx.filterFacts("", [newFact, ...factsCtx.userFilteredFacts]);
+    factsCtx.setFacts([newFact, ...factsCtx.userFacts]);
+    factsCtx.filterFacts("", [newFact, ...factsCtx.userFacts]);
     factsCtx.setLoadingSmall(false);
   });
 

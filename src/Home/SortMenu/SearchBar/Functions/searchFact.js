@@ -22,7 +22,7 @@ export function searchFact(text, factsCtx) {
 
   let textList = Object.keys(factText);
   for (let i = 0; i < textList.length; i++) {
-    if (textList[i].toLowerCase().includes(text)) {
+    if (textList[i].toLowerCase().includes(text.toLowerCase())) {
       searchResult.push(factText[textList[i]]);
     }
   }

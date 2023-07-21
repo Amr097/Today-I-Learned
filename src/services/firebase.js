@@ -34,19 +34,6 @@ const docsFacts = getDocs(colRef)
     return err.message;
   });
 
-// const docsInteracts = getDocs(interactsRef)
-//   .then((snapshot) => {
-//     let interactions = [];
-//     console.log(snapshot);
-//     snapshot.docs.forEach((doc) => {
-//       interactions.push({ ...doc.data(), id: doc.id });
-//     });
-//     return interactions;
-//   })
-//   .catch((err) => {
-//     return err.message;
-//   });
-
 const auth = getAuth(app);
 
 const googleProvider = new GoogleAuthProvider();

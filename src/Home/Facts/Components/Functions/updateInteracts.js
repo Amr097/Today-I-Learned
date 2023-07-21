@@ -11,17 +11,17 @@ export async function updateinteracts(
   factsCtx,
   isUpdating,
   e,
-  updating
+  updating,
+  currentInteract,
+  setCurrentInteract
 ) {
   if (!factsCtx.user) {
-    googleLogin(auth, googleProvider, factsCtx);
+    try {
+      googleLogin(auth, googleProvider);
+    } catch (error) {
+      console.log(err);
+    }
   } else {
-    isUpdating(true);
-    const docRef = doc(dbs, "facts", fact.id);
-    const newInteraction = {
-      [fact.id]: type,
-    };
-
     const interactsRef = doc(
       db,
       "interactions",
@@ -30,35 +30,93 @@ export async function updateinteracts(
       fact.id
     );
 
-    try {
-      const interactsSnap = await getDoc(interactsRef);
-      console.log(interactsSnap.exists());
-      if (interactsSnap.exists()) {
-        deleteDoc(interactsRef).then(() => {
-          console.log("Entire Document has been deleted successfully.");
-        });
-      } else {
+    if (!currentInteract) {
+      isUpdating((prev) => !prev);
+      const docRef = doc(dbs, "facts", fact.id);
+      const newInteraction = {
+        [fact.id]: type,
+      };
+
+      updateDoc(docRef, {
+        [type]: fact[type] + 1,
+      });
+
+      try {
         setDoc(interactsRef, newInteraction);
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
 
-    updateDoc(docRef, {
-      [type]: fact[type] + 1,
-    });
+      const updatedFacts = () => {
+        factsCtx.userFilteredFacts.forEach((f) =>
+          f.id === fact.id ? (f[type] += 1) : f
+        );
 
-    const updatedFacts = () => {
-      factsCtx.userFilteredFacts.forEach((f) =>
-        f.id === fact.id ? (f[type] += 1) : f
-      );
+        return factsCtx.userFilteredFacts;
+      };
 
-      return factsCtx.userFilteredFacts;
-    };
-
-    setTimeout(() => {
-      isUpdating(false);
       factsCtx.filterFacts("", [...updatedFacts()]);
-    }, 200);
+    } else {
+      if (type === currentInteract) {
+        const docRef = doc(dbs, "facts", fact.id);
+
+        updateDoc(docRef, {
+          [type]: fact[type] - 1,
+        });
+
+        try {
+          deleteDoc(
+            doc(db, "interactions", factsCtx.user.uid, "intedFact", fact.id)
+          ).then(() => {
+            const updatedFacts = () => {
+              factsCtx.userFilteredFacts.forEach((f) =>
+                f.id === fact.id ? (f[type] -= 1) : f
+              );
+
+              return factsCtx.userFilteredFacts;
+            };
+            isUpdating((prev) => !prev);
+            factsCtx.filterFacts("", [...updatedFacts()]);
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        const docRef = doc(dbs, "facts", fact.id);
+
+        const currentInteraction = {
+          [fact.id]: currentInteract,
+        };
+
+        updateDoc(docRef, {
+          [currentInteract]: fact[currentInteract] - 1,
+        });
+
+        updateDoc(docRef, {
+          [type]: fact[type] + 1,
+        });
+
+        try {
+          updateDoc(interactsRef, {
+            [fact.id]: type,
+          });
+        } catch (error) {
+          console.log(error);
+        }
+
+        const updatedFacts = () => {
+          factsCtx.userFilteredFacts.forEach((f) => {
+            if (f.id === fact.id) {
+              f[type] += 1;
+              f[currentInteract] -= 1;
+            }
+          });
+
+          return factsCtx.userFilteredFacts;
+        };
+
+        factsCtx.filterFacts("", [...updatedFacts()]);
+      }
+    }
   }
 }

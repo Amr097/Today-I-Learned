@@ -1,30 +1,38 @@
 "use client";
 import React from "react";
 import { CATEGORIES } from "../../../../data";
-import { updateDoc, doc } from "firebase/firestore";
+import { updateDoc, doc, getDocs, collection } from "firebase/firestore";
 import { db } from "@/services/firebase";
 import { useContext, useState, useEffect } from "react";
 import FactsContext from "@/store/factsContext";
 import { getColor } from "./Functions/getColor";
 import { updateinteracts } from "./Functions/updateInteracts";
 
-const Item = ({ fact }) => {
+const Item = ({ fact, setIsUpdating, updating }) => {
   const factsCtx = useContext(FactsContext);
-  const [updating, setIsUpdating] = useState(false);
   const [currentInteract, setCurrentInteract] = useState("");
   const isDisputed =
     fact.votesInteresting + fact.votesMindblowing < fact.votesFalse;
 
   useEffect(() => {
-    if (factsCtx.userPosts.length > 0) {
-      factsCtx.userPosts.forEach((post) => {
-        if (post[fact.id]) {
-          setCurrentInteract(post[fact.id]);
+    if (factsCtx.user) {
+      const interactsRef = collection(
+        doc(db, "interactions", factsCtx.user.uid),
+        "intedFact"
+      );
 
-          console.log("votesMindblowing" === currentInteract.toString());
-          console.log("votesFalse" === currentInteract.toString());
-        }
-      });
+      try {
+        getDocs(interactsRef).then((result) => {
+          result.forEach((doc) => {
+            if (doc.data()[fact.id]) {
+              setCurrentInteract(doc.data()[fact.id]);
+              return;
+            }
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   }, []);
 
@@ -48,10 +56,9 @@ const Item = ({ fact }) => {
         </span>
         <button
           className="item__interact"
-          disabled={updating}
           style={
             "votesInteresting" === currentInteract.toString()
-              ? { border: "solid 3.5px #1bc7d6" }
+              ? { backgroundColor: "rgb(226, 204, 204)" }
               : null
           }
           onClick={(e) => {
@@ -64,7 +71,9 @@ const Item = ({ fact }) => {
               factsCtx,
               setIsUpdating,
               e,
-              updating
+              updating,
+              currentInteract,
+              setCurrentInteract
             );
           }}
         >
@@ -72,10 +81,9 @@ const Item = ({ fact }) => {
         </button>
         <button
           className="item__interact"
-          disabled={updating}
           style={
             "votesMindblowing" === currentInteract.toString()
-              ? { border: "solid 3.5px #d6c229" }
+              ? { backgroundColor: "rgb(226, 204, 204)" }
               : null
           }
           onClick={(e) => {
@@ -88,7 +96,9 @@ const Item = ({ fact }) => {
               factsCtx,
               setIsUpdating,
               e,
-              updating
+              updating,
+              currentInteract,
+              setCurrentInteract
             );
           }}
         >
@@ -96,10 +106,9 @@ const Item = ({ fact }) => {
         </button>
         <button
           className="item__interact"
-          disabled={updating}
           style={
             "votesFalse" === currentInteract.toString()
-              ? { border: "solid 3.5px #ac0e0e" }
+              ? { backgroundColor: "red" }
               : null
           }
           onClick={(e) => {
@@ -112,7 +121,9 @@ const Item = ({ fact }) => {
               factsCtx,
               setIsUpdating,
               e,
-              updating
+              updating,
+              currentInteract,
+              setCurrentInteract
             );
           }}
         >

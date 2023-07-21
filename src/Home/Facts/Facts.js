@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import Item from "./Components/item";
+import Item from "./Components/Item";
 import { v4 as uuidv4 } from "uuid";
 import "./Facts.scss";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import FactsContext from "@/store/factsContext";
 import SpinnerSmall from "../Partials/SpinnerSmall";
 

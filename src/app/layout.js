@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Today I Learned!",
   description: "Everyday is a new day to furthter learn new things!",
+  icons: {
+    icon: "./images/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {

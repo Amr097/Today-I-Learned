@@ -10,16 +10,20 @@ such as integrating my web Front-end with Baas (Backend-as-a-service) and i have
 ## Features
 
 1- Responsive to all screen sizes.
+
 2- Enables user to post new facts & upvote/downvote existing facts.
+
 3- Enables user to filter facts by category.
 
 Improvments i added to what we built in the course:
 
 1- Added user login & authentication using firebase auth.
+
 2- Created subcolltections to the existing users collections in the database to store the user interactions which allows users to remove or change their cuurent votes thus improving user experience.
+
 3- Added various sorting functionalities & searching for facts.
 
-## Take a look?
+## Give it a try?
 
 https://today-1-learned.netlify.app/
 

@@ -27,7 +27,7 @@ export function sortFacts(filteredFacts) {
 
   return sortedValues.flat();
 }
-
+/////////////////////////////////////////////////////////////////////
 export function sortBy(type, factsCtx) {
   if (factsCtx.userFilteredFacts.length === 0 || !type.target.value) {
     return [];

@@ -1,4 +1,4 @@
-import { setDoc, doc, getDoc, deleteDoc } from "firebase/firestore";
+import { setDoc, deleteDoc } from "firebase/firestore";
 import { db, auth, googleProvider } from "@/services/firebase";
 import { googleLogin } from "@/Home/Header/Functions/auth";
 

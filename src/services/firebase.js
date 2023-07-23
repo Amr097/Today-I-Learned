@@ -1,10 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { collection, getFirestore, getDocs } from "firebase/firestore";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-} from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const config = {
   apiKey: process.env.NEXT_PUBLIC_FIRE_BASE_API_KEY,
@@ -20,7 +16,6 @@ const app = initializeApp(config);
 const db = getFirestore();
 
 const colRef = collection(db, "facts");
-//const interactsRef = collection(db, "interactions");
 
 const docsFacts = getDocs(colRef)
   .then((snapshot) => {

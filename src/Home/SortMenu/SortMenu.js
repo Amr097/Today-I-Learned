@@ -1,6 +1,7 @@
 import React from "react";
 import { sortBy } from "@/store/functions/sortFacts";
 import SearchBar from "@/Home/SortMenu/SearchBar/SearchBar";
+import ViewMenu from "./viewMenu/ViewMenu";
 import "./SortMenu.scss";
 
 const SortMenu = ({ factsCtx }) => {
@@ -23,6 +24,7 @@ const SortMenu = ({ factsCtx }) => {
         <option value="Oldest">Oldest</option>
       </select>
 
+      <ViewMenu factsCtx={factsCtx} />
       <SearchBar factsCtx={factsCtx} />
     </div>
   );

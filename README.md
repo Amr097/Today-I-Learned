@@ -15,13 +15,15 @@ such as integrating my web Front-end with Baas (Backend-as-a-service) and i have
 
 3- Enables user to filter facts by category.
 
-Improvments i added to what we built in the course:
+## Improvments i added to what we built in the course:
 
-1- Added user login & authentication using firebase auth.
+1- Used Context API to manage/update state globally across components.
 
-2- Created subcolltections to the existing users collections in the database to store the user interactions which allows users to remove or change their cuurent votes thus improving user experience.
+2- Added user login & authentication using firebase auth.
 
-3- Added various sorting functionalities & searching for facts.
+3- Created subcolltections to the existing users collections in the database to store the user interactions which allows users to remove or change their cuurent votes thus improving user experience.
+
+4- Added various sorting functionalities & searching for facts.
 
 ## Give it a try?
 
@@ -39,4 +41,4 @@ $ npm install
 
 ### Run the app
 
-$ npm next dev
+$ npx next dev

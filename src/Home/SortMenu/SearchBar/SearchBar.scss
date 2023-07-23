@@ -11,7 +11,7 @@
   margin-bottom: 2rem;
   padding: 0 1rem;
 
-  @media only screen and (width <= 53.125em) {
+  @media only screen and (width <= 75em) {
     margin: 0;
   }
 
@@ -28,7 +28,7 @@
     color: rgb(223, 210, 210);
     font-weight: bold;
 
-    @media only screen and (width <= 53.125em) {
+    @media only screen and (width <= 75em) {
       padding: 1rem;
     }
 

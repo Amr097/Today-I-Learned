@@ -9,11 +9,11 @@ export async function updateinteracts(
   dbs,
   fact,
   factsCtx,
-  isUpdating,
+  setCuurentInteract,
   e,
   updating,
   currentInteract,
-  setCurrentInteract
+  setVotes
 ) {
   if (!factsCtx.user) {
     try {
@@ -31,7 +31,6 @@ export async function updateinteracts(
     );
 
     if (!currentInteract) {
-      isUpdating((prev) => !prev);
       const docRef = doc(dbs, "facts", fact.id);
       const newInteraction = {
         [fact.id]: type,
@@ -47,15 +46,10 @@ export async function updateinteracts(
         console.log(error);
       }
 
-      const updatedFacts = () => {
-        factsCtx.userFilteredFacts.forEach((f) =>
-          f.id === fact.id ? (f[type] += 1) : f
-        );
-
-        return factsCtx.userFilteredFacts;
-      };
-
-      factsCtx.filterFacts("", [...updatedFacts()]);
+      setCuurentInteract(type);
+      setVotes((prev) => {
+        return { ...prev, [type]: prev[type] + 1 };
+      });
     } else {
       if (type === currentInteract) {
         const docRef = doc(dbs, "facts", fact.id);
@@ -68,15 +62,10 @@ export async function updateinteracts(
           deleteDoc(
             doc(db, "interactions", factsCtx.user.uid, "intedFact", fact.id)
           ).then(() => {
-            const updatedFacts = () => {
-              factsCtx.userFilteredFacts.forEach((f) =>
-                f.id === fact.id ? (f[type] -= 1) : f
-              );
-
-              return factsCtx.userFilteredFacts;
-            };
-            isUpdating((prev) => !prev);
-            factsCtx.filterFacts("", [...updatedFacts()]);
+            setCuurentInteract("");
+            setVotes((prev) => {
+              return { ...prev, [type]: prev[type] - 1 };
+            });
           });
         } catch (error) {
           console.log(error);
@@ -104,18 +93,14 @@ export async function updateinteracts(
           console.log(error);
         }
 
-        const updatedFacts = () => {
-          factsCtx.userFilteredFacts.forEach((f) => {
-            if (f.id === fact.id) {
-              f[type] += 1;
-              f[currentInteract] -= 1;
-            }
-          });
-
-          return factsCtx.userFilteredFacts;
-        };
-
-        factsCtx.filterFacts("", [...updatedFacts()]);
+        setCuurentInteract(type);
+        setVotes((prev) => {
+          return {
+            ...prev,
+            [type]: prev[type] + 1,
+            [currentInteract]: prev[currentInteract] - 1,
+          };
+        });
       }
     }
   }

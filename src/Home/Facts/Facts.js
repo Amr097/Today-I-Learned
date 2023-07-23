@@ -9,18 +9,12 @@ import SpinnerSmall from "../Partials/SpinnerSmall";
 
 const Facts = () => {
   const factsCtx = useContext(FactsContext);
-  const [updating, setIsUpdating] = useState(false);
 
   return (
     <ul className="facts__container">
       {factsCtx.loadingSmall && <SpinnerSmall />}
       {factsCtx.userFilteredFacts.map((fact) => (
-        <Item
-          fact={fact}
-          setIsUpdating={setIsUpdating}
-          updating={updating}
-          key={uuidv4()}
-        />
+        <Item fact={fact} key={uuidv4()} />
       ))}
       {factsCtx.userFilteredFacts.length > 0 ? (
         <p

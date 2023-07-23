@@ -8,9 +8,15 @@ import FactsContext from "@/store/factsContext";
 import { getColor } from "./Functions/getColor";
 import { updateinteracts } from "./Functions/updateInteracts";
 
-const Item = ({ fact, setIsUpdating, updating }) => {
+const Item = ({ fact }) => {
   const factsCtx = useContext(FactsContext);
   const [currentInteract, setCurrentInteract] = useState("");
+  const [updating, setIsUpdating] = useState(false);
+  const [votes, setVotes] = useState({
+    votesInteresting: fact.votesInteresting,
+    votesFalse: fact.votesFalse,
+    votesMindblowing: fact.votesMindblowing,
+  });
   const isDisputed =
     fact.votesInteresting + fact.votesMindblowing < fact.votesFalse;
 
@@ -69,15 +75,15 @@ const Item = ({ fact, setIsUpdating, updating }) => {
               db,
               fact,
               factsCtx,
-              setIsUpdating,
+              setCurrentInteract,
               e,
               updating,
               currentInteract,
-              setCurrentInteract
+              setVotes
             );
           }}
         >
-          👍 <strong>{fact.votesInteresting} </strong>
+          👍 <strong>{votes.votesInteresting} </strong>
         </button>
         <button
           className="item__interact"
@@ -94,15 +100,15 @@ const Item = ({ fact, setIsUpdating, updating }) => {
               db,
               fact,
               factsCtx,
-              setIsUpdating,
+              setCurrentInteract,
               e,
               updating,
               currentInteract,
-              setCurrentInteract
+              setVotes
             );
           }}
         >
-          🤯 <strong>{fact.votesMindblowing} </strong>
+          🤯 <strong>{votes.votesMindblowing} </strong>
         </button>
         <button
           className="item__interact"
@@ -119,15 +125,15 @@ const Item = ({ fact, setIsUpdating, updating }) => {
               db,
               fact,
               factsCtx,
-              setIsUpdating,
+              setCurrentInteract,
               e,
               updating,
               currentInteract,
-              setCurrentInteract
+              setVotes
             );
           }}
         >
-          ⛔️ <strong>{fact.votesFalse} </strong>
+          ⛔️ <strong>{votes.votesFalse} </strong>
         </button>
       </div>
     </li>

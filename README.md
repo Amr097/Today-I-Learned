@@ -25,6 +25,8 @@ such as integrating my web Front-end with Baas (Backend-as-a-service) and i have
 
 4- Added various sorting functionalities & searching for facts.
 
+5- Added functions to enable users to navigate through their own posts & posts they upvoted or downvoted.
+
 ## Give it a try?
 
 https://today-1-learned.netlify.app/

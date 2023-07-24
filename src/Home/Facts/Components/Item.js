@@ -48,7 +48,7 @@ const Item = ({ fact }) => {
         {isDisputed ? (
           <span style={{ color: "red" }}> [⛔️DISPUTED!] </span>
         ) : null}
-        {fact.text}
+        {fact.text}{" "}
         <a href={fact.source} target="_blank" className="item__source">
           (Source)
         </a>

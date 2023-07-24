@@ -13,7 +13,8 @@ export async function updateinteracts(
   e,
   setIsUpdating,
   currentInteract,
-  setVotes
+  setVotes,
+  votes
 ) {
   if (!factsCtx.user) {
     try {
@@ -39,7 +40,7 @@ export async function updateinteracts(
       };
 
       updateDoc(docRef, {
-        [type]: fact[type] + 1,
+        [type]: +votes[type] + 1,
       });
 
       try {
@@ -57,7 +58,7 @@ export async function updateinteracts(
         const docRef = doc(dbs, "facts", fact.id);
 
         updateDoc(docRef, {
-          [type]: fact[type] - 1,
+          [type]: +votes[type],
         });
 
         try {
@@ -80,11 +81,11 @@ export async function updateinteracts(
         };
 
         updateDoc(docRef, {
-          [currentInteract]: fact[currentInteract] - 1,
+          [currentInteract]: +votes[currentInteract] - 1,
         });
 
         updateDoc(docRef, {
-          [type]: fact[type] + 1,
+          [type]: +votes[type] + 1,
         });
 
         try {
@@ -108,5 +109,5 @@ export async function updateinteracts(
   }
   setTimeout(() => {
     setIsUpdating(false);
-  }, 600);
+  }, 1000);
 }

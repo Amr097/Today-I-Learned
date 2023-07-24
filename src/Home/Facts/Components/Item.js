@@ -80,7 +80,8 @@ const Item = ({ fact }) => {
               e,
               setIsUpdating,
               currentInteract,
-              setVotes
+              setVotes,
+              votes
             );
           }}
         >
@@ -106,7 +107,8 @@ const Item = ({ fact }) => {
               e,
               setIsUpdating,
               currentInteract,
-              setVotes
+              setVotes,
+              votes
             );
           }}
         >
@@ -132,7 +134,8 @@ const Item = ({ fact }) => {
               e,
               setIsUpdating,
               currentInteract,
-              setVotes
+              setVotes,
+              votes
             );
           }}
         >

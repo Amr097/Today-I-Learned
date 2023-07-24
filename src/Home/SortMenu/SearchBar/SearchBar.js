@@ -8,16 +8,7 @@ const SearchBar = ({ factsCtx }) => {
   const [searchText, setSearchText] = useState("");
   const searchRef = useRef();
 
-  const search = () => {
-    setSearchText("");
-    if (factsCtx.userFilteredFacts.length < factsCtx.userFacts.length) {
-      factsCtx.setLoading(true);
-      factsCtx.filterFacts("", [...factsCtx.userFacts]);
-      setTimeout(() => {
-        factsCtx.setLoading(false);
-      }, 100);
-    }
-  };
+  const search = () => {};
 
   return (
     <div className="search">
@@ -32,12 +23,24 @@ const SearchBar = ({ factsCtx }) => {
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            search();
+            searchFact(searchText, factsCtx);
           }
         }}
       ></input>
 
-      <button className="search__button" onClick={search}>
+      <button
+        className="search__button"
+        onClick={() => {
+          setSearchText("");
+          if (factsCtx.userFilteredFacts.length < factsCtx.userFacts.length) {
+            factsCtx.setLoading(true);
+            factsCtx.filterFacts("", [...factsCtx.userFacts]);
+            setTimeout(() => {
+              factsCtx.setLoading(false);
+            }, 100);
+          }
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="grey"

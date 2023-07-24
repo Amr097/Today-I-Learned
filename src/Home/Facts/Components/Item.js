@@ -67,6 +67,7 @@ const Item = ({ fact }) => {
               ? { backgroundColor: "rgb(226, 204, 204)" }
               : null
           }
+          disabled={updating}
           onClick={(e) => {
             updateinteracts(
               "votesInteresting",
@@ -77,7 +78,7 @@ const Item = ({ fact }) => {
               factsCtx,
               setCurrentInteract,
               e,
-              updating,
+              setIsUpdating,
               currentInteract,
               setVotes
             );
@@ -92,6 +93,7 @@ const Item = ({ fact }) => {
               ? { backgroundColor: "rgb(226, 204, 204)" }
               : null
           }
+          disabled={updating}
           onClick={(e) => {
             updateinteracts(
               "votesMindblowing",
@@ -102,7 +104,7 @@ const Item = ({ fact }) => {
               factsCtx,
               setCurrentInteract,
               e,
-              updating,
+              setIsUpdating,
               currentInteract,
               setVotes
             );
@@ -117,6 +119,7 @@ const Item = ({ fact }) => {
               ? { backgroundColor: "red" }
               : null
           }
+          disabled={updating}
           onClick={(e) => {
             updateinteracts(
               "votesFalse",
@@ -127,7 +130,7 @@ const Item = ({ fact }) => {
               factsCtx,
               setCurrentInteract,
               e,
-              updating,
+              setIsUpdating,
               currentInteract,
               setVotes
             );

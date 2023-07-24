@@ -11,7 +11,7 @@ export async function updateinteracts(
   factsCtx,
   setCuurentInteract,
   e,
-  updating,
+  setIsUpdating,
   currentInteract,
   setVotes
 ) {
@@ -22,6 +22,8 @@ export async function updateinteracts(
       console.log(error);
     }
   } else {
+    setIsUpdating(true);
+
     const interactsRef = doc(
       db,
       "interactions",
@@ -104,4 +106,7 @@ export async function updateinteracts(
       }
     }
   }
+  setTimeout(() => {
+    setIsUpdating(false);
+  }, 600);
 }

@@ -38,14 +38,17 @@ const Header = () => {
 
       {factsCtx.loading ? null : factsCtx.user ? (
         <>
-          <button className="header__btn" onClick={handleLogout}>
+          <button
+            className="header__btn header__btn--second"
+            onClick={handleLogout}
+          >
             {" "}
             <p>Logout</p>{" "}
           </button>
 
           <input type="checkbox" name="" id="form" className="header__toggle" />
 
-          <label htmlFor="form" className="header__btn">
+          <label htmlFor="form" className="header__btn header__btn--first">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="1em"
@@ -59,7 +62,10 @@ const Header = () => {
           <Form />
         </>
       ) : (
-        <button className="header__btn" onClick={handleLogin}>
+        <button
+          className="header__btn header__btn--second"
+          onClick={handleLogin}
+        >
           <p>Log in</p>
         </button>
       )}

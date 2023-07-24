@@ -19,7 +19,7 @@ export async function updateinteracts(
     try {
       googleLogin(auth, googleProvider);
     } catch (error) {
-      console.log(err);
+      console.log(error);
     }
   } else {
     const interactsRef = doc(

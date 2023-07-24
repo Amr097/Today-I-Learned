@@ -3,7 +3,7 @@
   grid-column: 2/-1;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0 5rem 0 3rem;
 
   @media only screen and (width <= 75em) {
@@ -22,11 +22,15 @@
   outline: none;
   background-color: rgb(159, 150, 150);
   color: rgb(223, 210, 210);
-  font-size: 1.7rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bolder;
+
+  @media only screen and (width <= 68.75em) {
+    font-size: 1.2rem;
+  }
 
   option {
-    font-weight: bold;
+    font-weight: 500;
   }
 
   @media only screen and (width <= 75em) {

@@ -6,13 +6,17 @@
   grid-gap: 1.5rem;
 
   @media only screen and (width <= 53.125em) {
-    flex-direction: row;
+    //flex-direction: row;
     grid-column: 1/-1;
     grid-row: 1 / span 1;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    // flex-wrap: wrap;
+    // align-items: center;
+    // justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(9, auto);
     margin-bottom: 4rem;
+    margin-left: 1.5rem;
+    overflow-x: scroll;
   }
 
   &__btn {
@@ -38,6 +42,12 @@
         #16a34a,
         #eab308
       );
+
+      @media only screen and (width <= 53.125em) {
+        max-width: fit-content;
+        font-size: 1.2rem;
+        transform: translateY(10%);
+      }
     }
 
     &:hover {
@@ -49,7 +59,9 @@
     }
 
     @media only screen and (width <= 53.125em) {
-      width: 20rem;
+      width: fit-content;
+      font-size: 1.2rem;
+      padding: 0.7rem 2em;
     }
   }
 }

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import "./Header.scss";
 import Form from "@/Home/Form/Form";
 import { auth, googleProvider } from "@/services/firebase";

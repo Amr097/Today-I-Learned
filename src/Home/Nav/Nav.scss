@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Coiny&family=Josefin+Sans:wght@300;400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Sono:wght@400;500;600;700;800&display=swap");
+
 .navegory {
   grid-row: 1/-1;
   display: flex;
@@ -23,9 +25,10 @@
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.2s ease-in-out;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: white;
     background-color: rgb(137, 97, 47);
+    font-family: "Sono", sans-serif;
     cursor: pointer;
 
     &:first-child {

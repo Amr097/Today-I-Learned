@@ -1,4 +1,5 @@
 @import "../../app/styles/globals";
+@import url("https://fonts.googleapis.com/css2?family=Coiny&family=Josefin+Sans:wght@300;400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Sono:wght@400;500;600;700;800&display=swap");
 
 .facts__container {
   grid-row: 2/-1;
@@ -60,14 +61,15 @@
   &__tag {
     background-color: rgb(72, 0, 255);
     border-radius: 1000px;
-    padding: 0.3rem 1.2rem;
+    padding: 0.5rem 1.2rem;
     text-align: center;
     display: inline-block;
     width: fit-content;
     font-weight: bolder;
     margin-right: 1.7rem;
     text-transform: uppercase;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    font-family: "Sono", sans-serif;
   }
 
   &__interact {
@@ -78,7 +80,7 @@
     background-color: rgb(159, 150, 150);
     border: none;
     border-radius: 50000px;
-    padding: 0.5rem 1.2rem;
+    padding: 0.5rem 1.2rem 0.75rem;
     color: white;
     margin-right: 0.4rem;
     font-size: 1.7rem;
@@ -90,6 +92,10 @@
 
     &:hover {
       background-color: #292524;
+    }
+
+    strong {
+      transform: translateY(20%);
     }
   }
 

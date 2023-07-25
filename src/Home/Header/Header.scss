@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Coiny&family=Josefin+Sans:wght@300;400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Sono:wght@400;500;600;700;800&display=swap");
+
 .header {
   grid-column: 1/-1;
   width: 100%;
@@ -25,6 +27,7 @@
     font-weight: bolder;
     line-height: 1;
     margin-top: 1rem;
+    font-family: "Sono", sans-serif;
 
     @media only screen and (width <= 53.125em) {
       font-size: 3rem;
@@ -47,6 +50,7 @@
     border: none;
     line-height: 1;
     cursor: pointer;
+
     background-image: linear-gradient(
       135deg,
       #3b82f6,
@@ -77,6 +81,7 @@
       font-size: 2.2rem;
       text-transform: uppercase;
       font-weight: bolder;
+      font-family: "Sono", sans-serif;
 
       @media only screen and (width <= 53.125em) {
         font-size: 1.5rem;
@@ -109,6 +114,7 @@
     align-items: center;
     gap: 0.5rem;
     justify-self: flex-end;
+
     svg {
       fill: white;
       width: 2rem;

@@ -23,7 +23,6 @@
     text-transform: uppercase;
     font-size: 4.4rem;
     font-weight: bolder;
-    font-family: "Sono";
     line-height: 1;
     margin-top: 1rem;
 
@@ -75,7 +74,6 @@
     }
 
     p {
-      font-family: "Sono";
       font-size: 2.2rem;
       text-transform: uppercase;
       font-weight: bolder;
@@ -96,7 +94,7 @@
     &::before {
       content: "close";
       text-transform: uppercase;
-      font-family: "Sono";
+
       font-size: 2.2rem;
       display: none;
 

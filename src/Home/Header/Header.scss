@@ -50,6 +50,7 @@
     border: none;
     line-height: 1;
     cursor: pointer;
+    font-family: "Sono", sans-serif;
 
     background-image: linear-gradient(
       135deg,
@@ -99,7 +100,6 @@
     &::before {
       content: "close";
       text-transform: uppercase;
-
       font-size: 2.2rem;
       display: none;
 
@@ -114,6 +114,7 @@
     align-items: center;
     gap: 0.5rem;
     justify-self: flex-end;
+    font-family: "Sono", sans-serif;
 
     svg {
       fill: white;

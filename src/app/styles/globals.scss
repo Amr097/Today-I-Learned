@@ -61,10 +61,6 @@ main {
   }
 
   @media only screen and (width <= 53.125em) {
-    ::-webkit-scrollbar {
-      width: 0.5rem;
-    }
-
     ::-webkit-scrollbar-track {
       background: transparent;
     }

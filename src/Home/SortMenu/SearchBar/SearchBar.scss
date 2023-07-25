@@ -40,6 +40,10 @@
       width: 75%;
     }
 
+    @media only screen and (53.125em >= width) {
+      width: 69%;
+    }
+
     &:focus {
       width: 95%;
       outline: none;

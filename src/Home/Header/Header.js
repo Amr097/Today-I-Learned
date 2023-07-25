@@ -66,7 +66,7 @@ const Header = () => {
           className="header__btn header__btn--second"
           onClick={handleLogin}
         >
-          <p>Log in</p>
+          <p>Login</p>
         </button>
       )}
     </header>

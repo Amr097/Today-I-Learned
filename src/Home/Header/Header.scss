@@ -16,13 +16,14 @@
 
   @media only screen and (width <= 53.125em) {
     grid-template-rows: repeat(2, min-content) min-content;
+    margin-bottom: 2rem;
   }
 
   &__title {
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 4.4rem;
     font-weight: bolder;
-    font-family: "Coiny", cursive;
+    font-family: "Sono", cursive;
     line-height: 1;
     margin-top: 1rem;
 
@@ -41,7 +42,7 @@
     justify-self: flex-end;
     position: relative;
     grid-row: 1 / span 1;
-    padding: 2rem 2.8rem 1.8rem;
+    padding: 1.8rem 2.2rem;
     color: white;
     border-radius: 5000px;
     border: none;
@@ -67,16 +68,17 @@
 
     @media only screen and (width <= 53.125em) {
       max-width: 21rem;
-      padding: 2rem 1.5rem 1.8rem;
+      padding: 1.8rem 2.2rem;
       text-align: center;
       align-self: center;
       justify-self: flex-start;
     }
 
     p {
-      font-family: "Coiny", cursive;
+      font-family: "Sono", cursive;
       font-size: 2.2rem;
       text-transform: uppercase;
+      font-weight: bolder;
 
       @media only screen and (width <= 53.125em) {
         font-size: 1.5rem;
@@ -94,7 +96,7 @@
     &::before {
       content: "close";
       text-transform: uppercase;
-      font-family: "Coiny", cursive;
+      font-family: "Sono", cursive;
       font-size: 2.2rem;
       display: none;
 

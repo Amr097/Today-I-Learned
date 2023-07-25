@@ -6,12 +6,8 @@
   grid-gap: 1.5rem;
 
   @media only screen and (width <= 53.125em) {
-    //flex-direction: row;
     grid-column: 1/-1;
     grid-row: 1 / span 1;
-    // flex-wrap: wrap;
-    // align-items: center;
-    // justify-content: center;
     display: grid;
     grid-template-columns: repeat(9, auto);
     margin-bottom: 4rem;
@@ -27,7 +23,7 @@
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.2s ease-in-out;
-    font-family: "Coiny", cursive;
+    font-family: "Sono", cursive;
     font-size: 1.8rem;
     color: white;
     background-color: rgb(137, 97, 47);
@@ -46,7 +42,7 @@
       @media only screen and (width <= 53.125em) {
         max-width: fit-content;
         font-size: 1.2rem;
-        transform: translateY(10%);
+        transform: translateY(20%);
       }
     }
 

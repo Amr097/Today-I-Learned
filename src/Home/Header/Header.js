@@ -2,10 +2,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./Header.scss";
 import Form from "@/Home/Form/Form";
-import { auth, googleProvider, db } from "@/services/firebase";
+import { auth, googleProvider } from "@/services/firebase";
 import { googleLogin, logout } from "./Functions/auth";
-import { onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 import FactsContext from "@/store/factsContext";
 
 const Header = () => {
@@ -58,8 +56,6 @@ const Header = () => {
             </svg>
             <p>Write</p>
           </label>
-
-          <Form />
         </>
       ) : (
         <button
@@ -69,6 +65,7 @@ const Header = () => {
           <p>Login</p>
         </button>
       )}
+      <Form />
     </header>
   );
 };

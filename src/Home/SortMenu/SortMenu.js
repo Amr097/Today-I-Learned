@@ -16,11 +16,11 @@ const SortMenu = ({ factsCtx }) => {
         }}
       >
         <option value="">Sort by:</option>
-        <option value="Default">Total interactions</option>
-        <option value="MindBlowing">Most mind blowing</option>
-        <option value="False">Most false</option>
-        <option value="Liked">Most likes</option>
-        <option value="Most recent">Most recent</option>
+        <option value="Default">Default</option>
+        <option value="Liked">Most 👍</option>
+        <option value="MindBlowing">Most 🤯</option>
+        <option value="False">Most ⛔️</option>
+        <option value="Most recent">Newest</option>
         <option value="Oldest">Oldest</option>
       </select>
 

@@ -109,5 +109,5 @@ export async function updateinteracts(
   }
   setTimeout(() => {
     setIsUpdating(false);
-  }, 1000);
+  }, 500);
 }

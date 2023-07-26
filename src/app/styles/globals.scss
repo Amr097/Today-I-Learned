@@ -60,7 +60,7 @@ main {
     box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
   }
 
-  @media only screen and (width <= 53.125em) {
+  @media only screen and (width <= 49.125em) {
     ::-webkit-scrollbar-track {
       background: transparent;
     }
@@ -72,7 +72,7 @@ main {
 }
 
 .root {
-  @media only screen and (width > 75em) {
+  @media only screen and (width > 49.125em) {
     margin: 0 auto;
     max-width: 90%;
   }

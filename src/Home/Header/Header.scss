@@ -32,6 +32,9 @@
     @media only screen and (width <= 53.125em) {
       font-size: 3rem;
     }
+    @media only screen and (width <= 33.125em) {
+      display: none;
+    }
   }
 
   .logo {

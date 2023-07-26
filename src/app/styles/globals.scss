@@ -41,7 +41,6 @@ main {
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content min-content 1fr;
   height: 80vh;
-
   ::-webkit-scrollbar {
     width: 2rem;
   }
@@ -70,11 +69,11 @@ main {
       background: transparent;
     }
   }
+}
 
+.root {
   @media only screen and (width > 75em) {
-    .root {
-      margin: 0 auto;
-      max-width: 90%;
-    }
+    margin: 0 auto;
+    max-width: 90%;
   }
 }

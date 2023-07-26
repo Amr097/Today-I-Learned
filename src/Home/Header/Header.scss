@@ -9,11 +9,11 @@
   align-items: center;
   padding: 3rem 3rem 0;
   grid-column-gap: 2rem;
-  margin-bottom: 4rem;
 
   @media only screen and (width > 53.125em) {
     padding: 3rem 5rem;
     grid-gap: 2rem;
+    margin-bottom: 0;
   }
 
   @media only screen and (width <= 53.125em) {

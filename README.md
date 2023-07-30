@@ -17,15 +17,19 @@ such as integrating my web Front-end with Baas (Backend-as-a-service) and i have
 
 ## Improvments i added to what we built in the course:
 
-1- Used Context API to manage/update state globally across components.
+1- Improved the overall styling and responsiveness of the app. 
+ What we built during the cousework: https://todayilearned-jonas.netlify.app/
+ How it looks after improving the styling: https://today-1-learned.netlify.app/
 
-2- Added user login & authentication using firebase auth.
+2- Used Context API to manage/update state globally across components.
 
-3- Created subcolltections to the existing users collections in the database to store the user interactions which allows users to remove or change their cuurent votes thus improving user experience.
+3- Added user login & authentication using firebase auth.
 
-4- Added various sorting functionalities & searching for facts.
+4- Created subcolltections to the existing users collections in the database to store the user interactions which allows users to remove or change their cuurent votes thus improving user experience.
 
-5- Added functions to enable users to navigate through their own posts & posts they upvoted or downvoted.
+5- Added various sorting functionalities & searching for facts.
+
+6- Added functions to enable users to navigate through their own posts & posts they upvoted or downvoted.
 
 ## Give it a try?
 

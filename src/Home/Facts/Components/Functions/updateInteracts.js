@@ -61,6 +61,10 @@ export async function updateinteracts(
           [type]: +votes[type],
         });
 
+        updateDoc(docRef, {
+          [currentInteract]: +votes[currentInteract] - 1,
+        });
+
         try {
           deleteDoc(
             doc(db, "interactions", factsCtx.user.uid, "intedFact", fact.id)

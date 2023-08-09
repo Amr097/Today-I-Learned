@@ -8,8 +8,6 @@ const SearchBar = ({ factsCtx }) => {
   const [searchText, setSearchText] = useState("");
   const searchRef = useRef();
 
-  const search = () => {};
-
   return (
     <div className="search">
       <input

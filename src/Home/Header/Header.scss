@@ -23,7 +23,7 @@
 
   &__title {
     text-transform: uppercase;
-    font-size: 4.4rem;
+    font-size: 4.2rem;
     font-weight: bolder;
     line-height: 1;
     margin-top: 1rem;
@@ -38,8 +38,8 @@
   }
 
   .logo {
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 7.25rem;
+    height: 7.25rem;
     display: block;
   }
 
@@ -47,20 +47,19 @@
     justify-self: flex-end;
     position: relative;
     grid-row: 1 / span 1;
-    padding: 1.8rem 2.2rem;
+    padding: 1.5rem 2.2rem;
     color: white;
-    border-radius: 5000px;
+    border-radius: 10px;
     border: none;
     line-height: 1;
     cursor: pointer;
     font-family: "Sono", sans-serif;
 
     background-image: linear-gradient(
-      135deg,
-      #3b82f6,
-      #ef4444,
-      #16a34a,
-      #eab308
+      225deg,
+      #86efac 10%,
+      #60a5fa,
+      #6366f1 80%
     );
 
     transition: all 0.2s;
@@ -82,7 +81,7 @@
     }
 
     p {
-      font-size: 2.2rem;
+      font-size: 1.9rem;
       text-transform: uppercase;
       font-weight: bolder;
       font-family: "Sono", sans-serif;
@@ -93,7 +92,7 @@
     }
 
     &:hover {
-      transform: rotate(-2deg) scale(1.1);
+      transform: rotate(-2deg) scale(1.05);
     }
 
     &:active {
@@ -103,7 +102,7 @@
     &::before {
       content: "close";
       text-transform: uppercase;
-      font-size: 2.2rem;
+      font-size: 1.9rem;
       display: none;
 
       @media only screen and (width <= 53.125em) {
@@ -121,9 +120,9 @@
 
     svg {
       fill: white;
-      width: 2rem;
-      height: 2rem;
-      transform: translateY(-0.25rem);
+      width: 1.7rem;
+      height: 1.7rem;
+      transform: translateY(-0.17rem);
 
       @media only screen and (width <= 53.125em) {
         width: 1.5rem;

@@ -1,12 +1,12 @@
 const CATEGORIES = [
   { name: "technology", color: "#6c7a89" },
-  { name: "science", color: "#c5d065" },
+  { name: "science", color: "#8ebf42" },
   { name: "finance", color: "#ff6b6b" },
-  { name: "society", color: " #d2b85d" },
-  { name: "entertainment", color: "#c59dbf" },
-  { name: "health", color: " #89b8a3" },
-  { name: "history", color: "#a89f91" },
-  { name: "news", color: "#bca1e2" },
+  { name: "society", color: " #d0b066" },
+  { name: "entertainment", color: "#d857e1" },
+  { name: "health", color: " #789b8a" },
+  { name: "history", color: "#9e9287" },
+  { name: "news", color: "#9079b6" },
 ];
 
 const initialFacts = [

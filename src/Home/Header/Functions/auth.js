@@ -1,8 +1,8 @@
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithRedirect, signOut } from "firebase/auth";
 
 export function googleLogin(auth, googleProvider) {
   try {
-    signInWithPopup(auth, googleProvider);
+    signInWithRedirect(auth, googleProvider);
   } catch (error) {
     console.log(error);
   }

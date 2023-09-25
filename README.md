@@ -1,6 +1,6 @@
-# Share a fact
+# Today I Learned
 
-Share a fact is a web application Built with Nextjs, Scss on the Front-end & Firebase on the Backend, The project design and idea was a part of Jonas Schmedtmann Crash Course Build a FullStack Web App.
+Today I Learned is a web application Built with Nextjs, Scss on the Front-end & Firebase on the Backend, The project design and idea was a part of Jonas Schmedtmann Crash Course Build a FullStack Web App.
 
 ## Description
 
